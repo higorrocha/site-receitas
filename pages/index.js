@@ -1,42 +1,26 @@
-import Head from 'next/head';
-import Link from 'next/link';
+
+import Footer from '../components/Footer/Footer';
+import Header from '../components/Header/Header';
+import RecipeCard from '../components/RecipeCard/RecipeCard';
 
 export default function Index(){
   return (
     <div>
-      <Head>
 
-        <title>SiteReceitas</title>
-        <link rel="stylesheet" href='/styles/page.css' />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-
-      </Head>
-      
-      <header className='header'>
-        <Link href="/">
-          <a>
-            <h1 className='Logo Site Receitas'>SITE<b>RECEITAS</b></h1>
-          </a>
-        </Link>
-      </header>
+      <Header title="SiteReceitas" />
 
       <main>
 
-        <figure className='recipe-card'>
-          <Link href="receitas/bolos/chocolate">
-            <a>
-              <img className='recipe-picture' src='/img/bolo-chocolate.jpg' />
-            </a>
-          </Link>
-          <div className='recipe-category'>Bolos</div>
-          <figcaption className='recipe-name'>Bolo de chocolate</figcaption>
-        </figure>
-
+        <RecipeCard 
+          name="Bolo de Chocolate"
+          category="Bolos"
+          picture="/img/bolo-chocolate.jpg"    
+          link="/receitas/bolos/chocolate"    
+        />
+        
       </main>
 
-      <footer className='footer'>
-        &copy; Site Recitas
-      </footer>
+     <Footer />
     </div>
   )
 }
